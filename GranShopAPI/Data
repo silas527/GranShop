@@ -1,0 +1,15 @@
+using GranShopAPI.Data;
+using GranShopAPI.Models;
+using Microsoft.EntyFrameworkCore;
+
+namespace GranShopAPI.Data;
+
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    {
+    }
+
+    public Dbset<Categoria> Categorias { get; set; }
+    public DbSet<Produto> Produtos { get; set; }
+}
